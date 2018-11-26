@@ -17,8 +17,6 @@ public class Login {
     private JPasswordField edtPassword;
     private JPanel loginPanel;
     private JLabel txtTitle;
-    private JLabel txtUsername;
-    private JLabel txtPassword;
     private static JFrame frame;
 
     public Login() {
@@ -45,7 +43,7 @@ public class Login {
                     JOptionPane.showMessageDialog(frame, result, "Warning", JOptionPane.WARNING_MESSAGE);
                     return;
                 } else {
-//                    new mainBoard();
+//                  new mainBoard();
                     frame.dispose();
                 }
             }
@@ -113,4 +111,7 @@ public class Login {
         });
     }
 
+    private void createUIComponents() {
+        // TODO: place custom component creation code here
+    }
 }
