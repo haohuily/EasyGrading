@@ -211,7 +211,7 @@ public class JdbcUtils {
         ResultSetMetaData metaData = resultSet.getMetaData();
         int cols_len = metaData.getColumnCount();
         while (resultSet.next()) {
-            //通过反射机制创建一个实例
+            // Create an instance by reflection
             T resultObject = cls.newInstance();
             for (int i = 0; i < cols_len; i++) {
                 String cols_name = metaData.getColumnName(i + 1);

@@ -39,11 +39,11 @@ public class Login {
 
                 String result = loginUtils.login(admin);
 
-                if (!result.equals("SuccessfullyLogin")) {
+                if (!result.equals("Successfully login")) {
                     JOptionPane.showMessageDialog(frame, result, "Warning", JOptionPane.WARNING_MESSAGE);
                     return;
                 } else {
-//                  new mainBoard();
+                    new Main();
                     frame.dispose();
                 }
             }

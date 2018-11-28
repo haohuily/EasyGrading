@@ -5,9 +5,7 @@ import beans.Admin;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by jason on 9/2/15.
- */
+
 public class LoginUtils {
 
     private JdbcUtils jdbcUtils;
@@ -17,24 +15,16 @@ public class LoginUtils {
         jdbcUtils.getConnection();
     }
 
-    /**
-     * Login
-     *
-     * @param
-     * @return
-     */
+    // Login
     public String login(Admin admin) {
         // Default result
         String resultStr = "Fail to login";
-
-        String username = null;
-        String password = null;
-        String sql = null;
+        String sql;
 
         if (admin != null) {
-            username = admin.getUsername();
-            password = admin.getPassword();
-            sql = "select * from admin where username = ? and password = ?";
+            String username = admin.getUsername();
+            String password = admin.getPassword();
+            sql = "select * from admins where username = ? and password = ?";
 
             List<Object> params = new ArrayList<>();
             params.add(username);
@@ -42,7 +32,7 @@ public class LoginUtils {
             try {
                 Admin databaseAdmin = jdbcUtils.findSimpleRefResult(sql, params, Admin.class);
                 if (databaseAdmin != null) {
-                    resultStr = "SuccessfullyLogin";
+                    resultStr = "Successfully login";
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -51,24 +41,16 @@ public class LoginUtils {
         return resultStr;
     }
 
-    /**
-     * Register
-     *
-     * @param
-     * @return
-     */
+    // Register
     public String register(Admin admin) {
         // Default result
         String resultStr = "Fail to register";
-
-        String username = null;
-        String password = null;
-        String sql = null;
+        String sql;
 
         if (admin != null) {
-            username = admin.getUsername();
-            password = admin.getPassword();
-            sql = "insert into admin(username,password) values (?,?)";
+            String username = admin.getUsername();
+            String password = admin.getPassword();
+            sql = "insert into admins(username,password) values (?,?)";
 
             List<Object> params = new ArrayList<>();
             params.add(username);
@@ -83,14 +65,6 @@ public class LoginUtils {
             }
         }
         return resultStr;
-    }
-
-
-    /**
-     * Logout
-     */
-    public void logout() {
-
     }
 
     @Override

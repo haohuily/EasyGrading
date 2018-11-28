@@ -3,9 +3,7 @@ package utils;
 import javax.swing.*;
 import java.awt.*;
 
-/**
- * Created by jason on 9/2/15.
- */
+
 public class UICommonUtils {
 
     public static void makeFrameToCenter(JFrame frame) {
