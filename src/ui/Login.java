@@ -27,14 +27,14 @@ public class Login {
                     JOptionPane.showMessageDialog(frame, "Please enter user name", "Warning", JOptionPane.WARNING_MESSAGE);
                     return;
                 }
-                if (edtPassword.getText() == null || edtPassword.getText().length() <= 0) {
+                if (String.valueOf(edtPassword.getPassword()) == null || String.valueOf(edtPassword.getPassword()).length() <= 0) {
                     JOptionPane.showMessageDialog(frame, "Please enter password", "Warning", JOptionPane.WARNING_MESSAGE);
                     return;
                 }
 
                 LoginUtils loginUtils = new LoginUtils();
                 String username = edtUsername.getText().trim();
-                String password = edtPassword.getText().trim();
+                String password = String.valueOf(edtPassword.getPassword()).trim();
                 Admin admin = new Admin(username, password);
 
                 String result = loginUtils.login(admin);
@@ -43,7 +43,7 @@ public class Login {
                     JOptionPane.showMessageDialog(frame, result, "Warning", JOptionPane.WARNING_MESSAGE);
                     return;
                 } else {
-                    new Main();
+                    new MainPage();
                     frame.dispose();
                 }
             }
@@ -56,14 +56,14 @@ public class Login {
                     JOptionPane.showMessageDialog(frame, "Please enter user name", "Warning", JOptionPane.WARNING_MESSAGE);
                     return;
                 }
-                if (edtPassword.getText() == null || edtPassword.getText().length() <= 0) {
+                if (String.valueOf(edtPassword.getPassword()) == null || String.valueOf(edtPassword.getPassword()).length() <= 0) {
                     JOptionPane.showMessageDialog(frame, "Please enter password", "Warning", JOptionPane.WARNING_MESSAGE);
                     return;
                 }
 
                 LoginUtils loginUtils = new LoginUtils();
                 String username = edtUsername.getText().trim();
-                String password = edtPassword.getText().trim();
+                String password = String.valueOf(edtPassword.getPassword()).trim();
                 Admin admin = new Admin(username, password);
 
                 String result = loginUtils.register(admin);

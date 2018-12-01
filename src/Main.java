@@ -1,7 +1,8 @@
-import ui.Login;
+import ui.MainPage;
+import ui.NewStudent;
 
 public class Main {
     public static void main(String[] args) {
-        new Login();
+        new MainPage();
     }
 }

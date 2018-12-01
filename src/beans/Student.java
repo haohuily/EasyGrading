@@ -9,7 +9,7 @@ public class Student {
 
     private String name;
 
-    private boolean isGraduate;
+    private String stand;
 
     private List<Course> courses;
 
@@ -19,10 +19,10 @@ public class Student {
     public Student() {
     }
 
-    public Student(String BUID, String name, boolean isGraduate) {
+    public Student(String BUID, String name, String stand) {
         this.BUID = BUID;
         this.name = name;
-        this.isGraduate = isGraduate;
+        this.stand = stand;
     }
 
     public String getBUID() {
@@ -41,12 +41,12 @@ public class Student {
         this.name = name;
     }
 
-    public boolean isGraduate() {
-        return isGraduate;
+    public String getStand() {
+        return stand;
     }
 
-    public void setGraduate(boolean graduate) {
-        isGraduate = graduate;
+    public void setStand(String stand) {
+        this.stand = stand;
     }
 
     public List<Course> getCourses() {
