@@ -32,6 +32,10 @@ public class Course {
         this.year = year;
     }
 
+    public String printCourse() {
+        return this.num + " " + " " + this.section + " " + this.semester + " " + this.year;
+    }
+
     public int getId() {
         return id;
     }

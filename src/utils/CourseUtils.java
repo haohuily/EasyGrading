@@ -50,26 +50,21 @@ public class CourseUtils {
     }
 
 
-
     // TODO: import course from template
 
     // View all courses
     public List<Course> viewAllCourse() {
-        List<Course> courses = new ArrayList<>();
         String sql = "select * from courses";
         try {
-            List<Map<String, Object>> findAll = jdbcUtils.findModeResult(sql, null);
+            List<Course> findAll = jdbcUtils.findMoreRefResult(sql, null, Course.class);
             if (findAll != null) {
-                String resultStr = "Successfully add course";
-                for(Map map: findAll) {
-                    System.out.println(map);
-                }
+                return findAll;
+
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        return courses;
+        return null;
     }
 
     // View certain course
@@ -86,13 +81,12 @@ public class CourseUtils {
 
         return resultStr;
     }
-    public  String deleteCourse(int courseID) {
+
+    public String deleteCourse(int courseID) {
         String resultStr = "Fail to remove course";
 
         return resultStr;
     }
-
-
 
 
     @Override

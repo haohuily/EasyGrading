@@ -1,10 +1,13 @@
 package ui;
 
+import beans.Course;
+import utils.CourseUtils;
 import utils.UICommonUtils;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 public class MainPage {
     private JTextField searchTextField;
@@ -21,18 +24,13 @@ public class MainPage {
     private DefaultListModel listModel;
 
     public MainPage() {
-
         listModel = new DefaultListModel();
-//        listModel.addElement("Jane Doe");
-//        listModel.addElement("John Smith");
-//        listModel.addElement("Kathy Green");
-//
-//        listCourses.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-//        listCourses.setSelectedIndex(0);
-//        listCourses.addListSelectionListener();
-//        listCourses.setVisibleRowCount(5);
-//        JScrollPane scrollPanelCourses = new JScrollPane(listCourses);
-
+        CourseUtils courseUtils = new CourseUtils();
+        List<Course> courses = courseUtils.viewAllCourse();
+        for(Course course : courses) {
+            listModel.addElement(course.printCourse());
+        }
+        listCourses.setModel(listModel);
 
 
         btnAddCourse.addActionListener(new ActionListener() {
