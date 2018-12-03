@@ -23,7 +23,7 @@ public class NewClass {
     private JButton btnFromScratch;
     private JPanel Body;
     private JPanel Header;
-    private JList Classes;
+    private JTree classList;
     private static JFrame frame;
 
 

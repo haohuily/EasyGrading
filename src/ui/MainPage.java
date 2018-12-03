@@ -17,7 +17,9 @@ public class MainPage {
     private JButton btnAddCourse;
     private JPanel mainPanel;
     private JList listCourses;
-    private JScrollPane scrollPanelCourses;
+    private JTable table1;
+    private JButton editClassBtn;
+    private JTree classList;
     private static JFrame frame;
 
 

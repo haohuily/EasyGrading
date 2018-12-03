@@ -2,7 +2,7 @@ package ui;
 
 import javax.swing.*;
 
-public class ImportAttributes {
+public class StudentComponent {
     private JPanel Header;
     private JTextField searchTextField;
     private JButton logout;
@@ -10,8 +10,9 @@ public class ImportAttributes {
     private JPanel Classlist;
     private JButton addclass;
     private JPanel mainPanel;
-    private JButton backButton;
-    private JButton importButton;
-    private JList list1;
+    private JLabel studentComponent;
+    private JLabel grade;
+    private JLabel comment;
+    private JButton editBtn;
     private JTree classList;
 }

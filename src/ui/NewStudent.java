@@ -28,7 +28,7 @@ public class NewStudent {
     private JButton btnAdd;
     private JRadioButton radioBtnUnderGraduate;
     private JRadioButton radioBtnGraduate;
-    private JList Classes;
+    private JTree tree1;
     private JFrame frame;
     private String stand;
 
