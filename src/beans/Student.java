@@ -25,6 +25,14 @@ public class Student {
         this.stand = stand;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getBUID() {
         return BUID;
     }
