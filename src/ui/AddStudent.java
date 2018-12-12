@@ -10,7 +10,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class NewStudent {
+public class AddStudent {
     private JPanel Header;
     private JTextField searchTextField;
     private JButton logout;
@@ -32,7 +32,7 @@ public class NewStudent {
     private JFrame frame;
     private String stand;
 
-    public NewStudent() {
+    public AddStudent(int courseID) {
         ButtonGroup btnGroup = new ButtonGroup();
         btnGroup.add(radioBtnUnderGraduate);
         btnGroup.add(radioBtnGraduate);
@@ -63,11 +63,10 @@ public class NewStudent {
                     stand = "Undergraduate";
                 }
 
-
                 StudentUtils studentUtils = new StudentUtils();
                 Student student = new Student(buid, name, stand);
 
-                String result = studentUtils.addStudent(student);
+                String result = studentUtils.addStudent(student, courseID);
 
                 if (!result.equals("Successfully add student")) {
                     JOptionPane.showMessageDialog(frame, result, "Warning", JOptionPane.WARNING_MESSAGE);

@@ -2,7 +2,7 @@ package ui;
 
 import javax.swing.*;
 
-public class ImportAttributes {
+public class ImportComponents {
     private JPanel Header;
     private JTextField searchTextField;
     private JButton logout;

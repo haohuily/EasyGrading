@@ -8,7 +8,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class NewClass {
+public class AddClass {
     private JTextField searchTextField;
     private JButton logout;
     private JPanel Classlist;
@@ -27,7 +27,7 @@ public class NewClass {
     private static JFrame frame;
 
 
-    public NewClass() {
+    public AddClass() {
         btnFromScratch.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -80,8 +80,8 @@ public class NewClass {
 //        });
 
 
-        frame = new JFrame("Body");
-        frame.setContentPane(Body);
+        frame = new JFrame("mainPanel");
+        frame.setContentPane(mainPanel);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         UICommonUtils.makeFrameToCenter(frame);
