@@ -6,7 +6,7 @@ public class Grade {
 //    private int enrollmentID;
     private int studentID;
 
-    private int courseID;
+//    private int courseID;
 
     private int componentID;
 
@@ -33,13 +33,13 @@ public class Grade {
         this.studentID = studentID;
     }
 
-    public int getCourseID() {
-        return courseID;
-    }
-
-    public void setCourseID(int courseID) {
-        this.courseID = courseID;
-    }
+//    public int getCourseID() {
+//        return courseID;
+//    }
+//
+//    public void setCourseID(int courseID) {
+//        this.courseID = courseID;
+//    }
 
     //    public int getEnrollmentID() {
 //        return enrollmentID;

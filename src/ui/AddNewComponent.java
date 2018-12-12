@@ -67,7 +67,7 @@ public class AddNewComponent {
 
                 ComponentUtils componentUtils = new ComponentUtils();
                 String result = componentUtils.addComponent(courseID, edtCpntName.getText().trim(), type, Double.parseDouble(edtGradWeight.getText().trim()),
-                        Double.parseDouble(edtUnderGradWeight.getText().trim()), Double.parseDouble(edtTotalScore.getText().trim()),  edtComments.getText());
+                        Double.parseDouble(edtUnderGradWeight.getText().trim()), Double.parseDouble(edtTotalScore.getText().trim()), 0.0, edtComments.getText());
 
 
                 if (!result.equals("Successfully add component")) {

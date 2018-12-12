@@ -61,6 +61,9 @@ public class EditComponents {
         tableComponents.setModel(model);
 
 
+
+
+
         // TODO: delete multi rows in database
         // Delele multi rows on table but not database
 //        btnDeleteCpnts.addActionListener(new ActionListener() {

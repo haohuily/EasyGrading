@@ -16,10 +16,10 @@ public class ComponentUtils {
     }
 
 
-    public String addComponent(int courseID, String name, String type, Double graduateWeight, Double undergraduateWeight, Double totalScore, String comments) {
+    public String addComponent(int courseID, String name, String type, Double graduateWeight, Double undergraduateWeight, Double totalScore, Double globalCurve, String comments) {
         // Default result
         String resultStr = "Fail to add component";
-        String sql = "insert into components(courseID,name,type,graduateWeight,undergraduateWeight,totalScore,comments) values (?,?,?,?,?,?,?)";
+        String sql = "insert into components(courseID,name,type,graduateWeight,undergraduateWeight,totalScore,globalCurve,comments) values (?,?,?,?,?,?,?,?)";
 
         List<Object> params = new ArrayList<>();
         params.add(courseID);
@@ -28,6 +28,7 @@ public class ComponentUtils {
         params.add(graduateWeight);
         params.add(undergraduateWeight);
         params.add(totalScore);
+        params.add(globalCurve);
         params.add(comments);
 
         try {
@@ -43,8 +44,9 @@ public class ComponentUtils {
 
     public List<Component> searchAllComponents(int courseID) {
         List<Component> components = new ArrayList<>();
-        String sql = "select name,type,graduateWeight,undergraduateWeight,totalScore from components where courseID = ?";
+//        String sql = "select name,type,graduateWeight,undergraduateWeight,totalScore from components where courseID = ?";
 
+        String sql = "select * from components where courseID = ?";
         List<Object> params = new ArrayList<>();
         params.add(courseID);
 
@@ -74,19 +76,51 @@ public class ComponentUtils {
         return resultStr;
     }
 
-    public List<Component> searchAllTypes(int courseID) {
-        List<Component> components = new ArrayList<>();
-        String sql = "select distinct type from components where courseID = ?";
+//    public List<Component> searchAllTypes(int courseID) {
+//        List<Component> components = new ArrayList<>();
+//        String sql = "select distinct type from components where courseID = ?";
+//
+//        List<Object> params = new ArrayList<>();
+//        params.add(courseID);
+//        try {
+//            components = jdbcUtils.findMoreRefResult(sql, params, Component.class);
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return components;
+//    }
+
+
+    public Component searchCertainComponent(int courseID, String name) {
+        String sql = "select * from components where courseID = ? and name = ?";
 
         List<Object> params = new ArrayList<>();
         params.add(courseID);
+        params.add(name);
+
         try {
-            components = jdbcUtils.findMoreRefResult(sql, params, Component.class);
+            return jdbcUtils.findSimpleRefResult(sql, params, Component.class);
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return components;
+        return null;
+    }
+
+
+    public void updateGlobalCurve(int componentID, Double curve) {
+        String sql = "update components set globalCurve = ? where id = ?";
+
+        List<Object> params = new ArrayList<>();
+        params.add(curve);
+        params.add(componentID);
+
+        try {
+            jdbcUtils.updateByPreparedStatement(sql, params);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 

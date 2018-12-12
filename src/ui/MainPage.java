@@ -2,9 +2,9 @@ package ui;
 
 import beans.Component;
 import beans.Course;
-import utils.ComponentUtils;
-import utils.CourseUtils;
-import utils.UICommonUtils;
+import beans.Grade;
+import beans.Student;
+import utils.*;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
@@ -13,7 +13,9 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class MainPage {
     private JTextField searchTextField;
@@ -27,12 +29,17 @@ public class MainPage {
     private JButton btnEdtClassCpnts;
     private JButton btnAddStudent;
     private JTable tableGrades;
-    private JButton btnTest;
+    private JButton btnGrading;
+    private JScrollPane scrollPanelGrades;
     private static JFrame frame;
 
 
     private DefaultListModel listModel;
     int courseID;
+    List<String> columnsList;
+    List<Component> components = new ArrayList<>();
+    List<Integer> componentIDs = new ArrayList<>();
+    Map<Integer, Component> map = new HashMap<>();
 
     public MainPage() {
         listModel = new DefaultListModel();
@@ -46,43 +53,78 @@ public class MainPage {
         listCourses.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
-                int idx = listCourses.getSelectedIndex();
-                courseID = idx + 1;
+                if (!e.getValueIsAdjusting()) {
+                    columnsList = new ArrayList<>();
+
+                    int idx = listCourses.getSelectedIndex();
+                    // TODO:courseID cannot be got in this way, just a tricky way here.
+                    courseID = idx + 1;
+
+                    ComponentUtils componentUtils = new ComponentUtils();
+                    GradingUtils gradingUtils = new GradingUtils();
+                    EnrollmentUtils enrollmentUtils = new EnrollmentUtils();
 
 
+                    components = componentUtils.searchAllComponents(courseID);
 
-                ComponentUtils componentUtils = new ComponentUtils();
-                List<Component> components = componentUtils.searchAllTypes(courseID);
-                List<String> types = new ArrayList<>();
+//                    System.out.println(courseID);
+                    columnsList.add("Student name");
+                    columnsList.add("Student BU ID");
 
-                for (Component component : components) {
-                    types.add(component.getType());
+                    for (Component component : components) {
+                        columnsList.add(component.getName());
+                        componentIDs.add(component.getId());
+                        map.put(component.getId(), component);
+                    }
+
+                    columnsList.add("Total grade");
+                    columnsList.add("Level");
+
+
+                    DefaultTableModel model = new DefaultTableModel(columnsList.toArray(), 0);
+                    List<Object> objectsList;
+
+
+                    List<Student> students = enrollmentUtils.searchAllStudent(courseID);
+                    for (Student student : students) {
+                        objectsList = new ArrayList<>();
+
+                        Double sum = 0.0;
+
+                        String name = student.getName();
+                        String BUID = student.getBUID();
+
+                        objectsList.add(name);
+                        objectsList.add(BUID);
+
+                        // TODO
+                        for (Integer componentID : componentIDs) {
+                            Grade grade = gradingUtils.findCertainGrade(student.getId(), componentID);
+                            Double baseGrade = 0.0;
+                            Double individualCurve = 0.0;
+                            Double total = 0.0;
+
+                            if (grade != null) {
+                                baseGrade = grade.getStudentScore();
+                                individualCurve = grade.getStudentCurve();
+                                total = baseGrade + individualCurve;
+                            }
+                            objectsList.add(total);
+                            sum += total;
+                        }
+
+                        objectsList.add(sum);
+                        objectsList.add("A");
+
+
+                        Object[] objects = objectsList.toArray();
+                        model.addRow(objects);
+
+                    }
+                    tableGrades.setModel(model);
                 }
-                Object[] columnNames = types.toArray();
-
-                for (int i = 0; i < columnNames.length; i++) {
-                    System.out.println("--------------");
-                    System.out.println(columnNames[i]);
-                }
-
-                DefaultTableModel model = new DefaultTableModel(columnNames, 0);
-                tableGrades.setModel(model);
             }
         });
-
-
-
-
-//        for (Component component : components) {
-//            String name = component.getName();
-//            String type = component.getType();
-//            Double gradWeight = component.getGraduateWeight();
-//            Double underGradWeight = component.getUndergraduateWeight();
-//            Double totalScore = component.getTotalScore();
-//
-//            model.addRow(new Object[]{name, type, gradWeight, underGradWeight, totalScore});
-//        }
-//        tableComponents.setModel(model);
 
 
         btnAddCourse.addActionListener(new ActionListener() {
@@ -111,6 +153,13 @@ public class MainPage {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new AddStudent(courseID);
+            }
+        });
+
+        btnGrading.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new GradingMain(courseID);
             }
         });
 
