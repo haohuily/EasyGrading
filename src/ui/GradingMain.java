@@ -44,12 +44,18 @@ public class GradingMain {
     Component component;
     Student student;
     Map<String, Student> map = new HashMap<>();
+    GradingMain gradingMain;
+    ComponentUtils componentUtils;
+    int courseID;
 
 
-    public GradingMain(int courseID) {
+    public GradingMain(int courseID, MainPage mainPage) {
+        this.courseID = courseID;
+        gradingMain = this;
+
 
         listModel = new DefaultListModel();
-        ComponentUtils componentUtils = new ComponentUtils();
+        componentUtils = new ComponentUtils();
         List<Component> components = componentUtils.searchAllComponents(courseID);
 
         for (Component component : components) {
@@ -62,48 +68,7 @@ public class GradingMain {
             @Override
             public void valueChanged(ListSelectionEvent e) {
                 if (!e.getValueIsAdjusting()) {
-                    name = componentsList.getSelectedValue().toString();
-                    component = componentUtils.searchCertainComponent(courseID, name);
-
-                    txtComponentName.setText(component.getName());
-                    txtType.setText(component.getType());
-                    txtGradWeight.setText(component.getGraduateWeight().toString());
-                    txtUndergradWeight.setText(component.getUndergraduateWeight().toString());
-                    txtGlobalCurve.setText(component.getGlobalCurve().toString());
-
-
-                    // Table data change
-                    Object[] columnNames = {"Student name", "Student BU ID", "Stand", "Base Grade", "Individual Curve", "Comments"};
-                    DefaultTableModel model = new DefaultTableModel(columnNames, 0);
-
-                    EnrollmentUtils enrollmentUtils = new EnrollmentUtils();
-                    List<Student> students = enrollmentUtils.searchAllStudent(courseID);
-                    for (Student student : students) {
-                        // TODO: more info here
-                        String name = student.getName();
-                        String BUID = student.getBUID();
-                        String stand = student.getStand();
-
-                        map.put(BUID, student);
-
-
-                        GradingUtils gradingUtils = new GradingUtils();
-                        Grade grade = gradingUtils.findCertainGrade(student.getId(), component.getId());
-
-                        Double baseGrade = 0.0;
-                        Double individualCurve = 0.0;
-                        String comments = "";
-
-                        if (grade != null) {
-                            baseGrade = grade.getStudentScore();
-                            individualCurve = grade.getStudentCurve();
-                            comments = grade.getComments();
-                        }
-                        model.addRow(new Object[]{name, BUID, stand, baseGrade, individualCurve, comments});
-                    }
-                    tableGrade.setModel(model);
-
-
+                    showGrade();
                 }
 
             }
@@ -127,7 +92,7 @@ public class GradingMain {
         btnGradeStudent.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new GradeForStudent(student, component.getId());
+                new GradeForStudent(student, component.getId(), mainPage, gradingMain);
             }
         });
 
@@ -140,7 +105,7 @@ public class GradingMain {
         });
 
 
-        frame = new JFrame("Body");
+        frame = new JFrame("Grading");
         frame.setContentPane(Body);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
@@ -149,4 +114,49 @@ public class GradingMain {
 
         frame.setVisible(true);
     }
+
+
+    public void showGrade() {
+        name = componentsList.getSelectedValue().toString();
+        component = componentUtils.searchCertainComponent(courseID, name);
+
+        txtComponentName.setText(component.getName());
+        txtType.setText(component.getType());
+        txtGradWeight.setText(component.getGraduateWeight().toString());
+        txtUndergradWeight.setText(component.getUndergraduateWeight().toString());
+        txtGlobalCurve.setText(component.getGlobalCurve().toString());
+
+
+        // Table data change
+        Object[] columnNames = {"Student name", "Student BU ID", "Stand", "Base Grade", "Individual Curve", "Comments"};
+        DefaultTableModel model = new DefaultTableModel(columnNames, 0);
+
+        EnrollmentUtils enrollmentUtils = new EnrollmentUtils();
+        List<Student> students = enrollmentUtils.searchAllStudent(courseID);
+        for (Student student : students) {
+            // TODO: more info here
+            String name = student.getName();
+            String BUID = student.getBUID();
+            String stand = student.getStand();
+
+            map.put(BUID, student);
+
+
+            GradingUtils gradingUtils = new GradingUtils();
+            Grade grade = gradingUtils.findCertainGrade(student.getId(), component.getId());
+
+            Double baseGrade = 0.0;
+            Double individualCurve = 0.0;
+            String comments = "";
+
+            if (grade != null) {
+                baseGrade = grade.getStudentScore();
+                individualCurve = grade.getStudentCurve();
+                comments = grade.getComments();
+            }
+            model.addRow(new Object[]{name, BUID, stand, baseGrade, individualCurve, comments});
+        }
+        tableGrade.setModel(model);
+    }
+
 }

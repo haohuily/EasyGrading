@@ -21,7 +21,7 @@ public class GradeForStudent {
     private JFrame frame;
 
 
-    public GradeForStudent(Student student, int componentID) {
+    public GradeForStudent(Student student, int componentID, MainPage mainPage, GradingMain gradingMain) {
 
         int studentID = student.getId();
         String BUID = student.getBUID();
@@ -39,12 +39,14 @@ public class GradeForStudent {
                 gradingUtils.insertGradeForStudent(studentID, componentID, Double.valueOf(edtGrade.getText()),
                         Double.valueOf(edtCurve.getText()), edtComments.getText());
                 frame.dispose();
+                gradingMain.showGrade();
+                mainPage.showData();
             }
         });
 
 
 
-        frame = new JFrame("Body");
+        frame = new JFrame("Grade for student");
         frame.setContentPane(Body);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 

@@ -29,18 +29,21 @@ public class ManageComponents {
     private JButton btnEditCpnt;
     private JFrame frame;
 
-    private int row;
-    private int col;
+    //    private int row;
+//    private int col;
     private int courseID;
 
     Component componentSelected;
     ComponentUtils componentUtils;
     DefaultTableModel model;
 
+    ManageComponents manageComponents;
 
     Map<String, Component> map = new HashMap<>();
 
-    public ManageComponents(int courseID) {
+    public ManageComponents(int courseID, MainPage mainPage) {
+        manageComponents = this;
+
         this.courseID = courseID;
 
         showComponents();
@@ -48,7 +51,7 @@ public class ManageComponents {
         btnAddCpnts.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new AddNewComponent(courseID);
+                new AddNewComponent(courseID, manageComponents, mainPage);
             }
         });
 
@@ -56,7 +59,7 @@ public class ManageComponents {
         btnEditCpnt.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new ModifyComponent(componentSelected);
+                new ModifyComponent(componentSelected, manageComponents, mainPage);
             }
         });
 
@@ -71,13 +74,14 @@ public class ManageComponents {
                     return;
                 } else {
                     showComponents();
+                    mainPage.showData();
                 }
 
             }
         });
 
 
-        frame = new JFrame("mainPanel");
+        frame = new JFrame("Manage components");
         frame.setContentPane(mainPanel);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
@@ -89,12 +93,11 @@ public class ManageComponents {
 
 
     public void showComponents() {
-
         componentUtils = new ComponentUtils();
         List<Component> components = componentUtils.searchAllComponents(courseID);
 
 
-        Object[] columnNames = {"Component Name", "Type", "Graduate Weight", "Undergraduate Weight", "Total Score"};
+        Object[] columnNames = {"Component Name", "Type", "Graduate Weight", "Undergraduate Weight", "Total Score", "Notes"};
         model = new DefaultTableModel(columnNames, 0);
 
         for (Component component : components) {
@@ -103,10 +106,11 @@ public class ManageComponents {
             Double gradWeight = component.getGraduateWeight();
             Double underGradWeight = component.getUndergraduateWeight();
             Double totalScore = component.getTotalScore();
+            String notes = component.getComments();
 
             map.put(name, component);
 
-            model.addRow(new Object[]{name, type, gradWeight, underGradWeight, totalScore});
+            model.addRow(new Object[]{name, type, gradWeight, underGradWeight, totalScore, notes});
         }
         tableComponents.setModel(model);
 

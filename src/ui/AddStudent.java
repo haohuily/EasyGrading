@@ -31,7 +31,7 @@ public class AddStudent {
     private JFrame frame;
     private String stand;
 
-    public AddStudent(int courseID) {
+    public AddStudent(int courseID, MainPage mainPage) {
         ButtonGroup btnGroup = new ButtonGroup();
         btnGroup.add(radioBtnUnderGraduate);
         btnGroup.add(radioBtnGraduate);
@@ -79,12 +79,13 @@ public class AddStudent {
                     return;
                 } else {
                     frame.dispose();
+                    mainPage.showData();
                 }
             }
         });
 
 
-        frame = new JFrame("Body");
+        frame = new JFrame("Add student");
         frame.setContentPane(Body);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 

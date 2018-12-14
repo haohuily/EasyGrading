@@ -27,7 +27,7 @@ public class SetGlobalCurvePop {
             }
         });
 
-        frame = new JFrame("Body");
+        frame = new JFrame("Set global curve");
         frame.setContentPane(Body);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 

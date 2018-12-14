@@ -26,7 +26,7 @@ public class ModifyComponent {
     private JFrame frame;
     private String type = "Homework";
 
-    public ModifyComponent(Component component) {
+    public ModifyComponent(Component component, ManageComponents manageComponents, MainPage mainPage) {
 
         edtCpntName.setText(component.getName());
 
@@ -112,6 +112,8 @@ public class ModifyComponent {
                         Double.parseDouble(edtUnderGradWeight.getText().trim()), Double.parseDouble(edtTotalScore.getText().trim()), edtComments.getText());
                 if(successful) {
                     frame.dispose();
+                    manageComponents.showComponents();
+                    mainPage.showData();
                 } else {
                     return;
                 }
@@ -119,7 +121,7 @@ public class ModifyComponent {
         });
 
 
-        frame = new JFrame("mainPanel");
+        frame = new JFrame("Modify component");
         frame.setContentPane(mainPanel);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 

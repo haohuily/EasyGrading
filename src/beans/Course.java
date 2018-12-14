@@ -36,6 +36,11 @@ public class Course {
         return this.num + " " + " " + this.section + " " + this.semester + " " + this.year;
     }
 
+
+    public String printLongCourse() {
+        return this.num + " " + " " + this.section + " " + this.semester + " " + this.year + " " + this.name;
+    }
+
     public int getId() {
         return id;
     }

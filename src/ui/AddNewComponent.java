@@ -28,7 +28,7 @@ public class AddNewComponent {
 
     private String type = "Homework";
 
-    public AddNewComponent(int courseID) {
+    public AddNewComponent(int courseID, ManageComponents manageComponents, MainPage mainPage) {
 
         boxCategory.addItem("Homework");
         boxCategory.addItem("Quiz");
@@ -77,11 +77,13 @@ public class AddNewComponent {
                 } else {
                     frame.dispose();
 //                    new ManageComponents(courseID);
+                    manageComponents.showComponents();
+                    mainPage.showData();
                 }
             }
         });
 
-        frame = new JFrame("mainPanel");
+        frame = new JFrame("Add new component");
         frame.setContentPane(mainPanel);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 

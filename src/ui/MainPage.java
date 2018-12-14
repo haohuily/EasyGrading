@@ -44,6 +44,7 @@ public class MainPage {
     private int row;
     private int col;
     private String BUID;
+    MainPage mainPage;
 
 
     List<String> columnsList;
@@ -53,13 +54,17 @@ public class MainPage {
     CourseUtils courseUtils;
 
     public MainPage() {
-        listModel = new DefaultListModel();
-        courseUtils = new CourseUtils();
-        List<Course> courses = courseUtils.viewAllCourse();
-        for (Course course : courses) {
-            listModel.addElement(course.printCourse());
-        }
-        listCourses.setModel(listModel);
+        mainPage = this;
+        showList();
+
+//        listModel = new DefaultListModel();
+//        courseUtils = new CourseUtils();
+//        List<Course> courses = courseUtils.viewAllCourse();
+//        for (Course course : courses) {
+//            listModel.addElement(course.printCourse());
+//        }
+//        listCourses.setModel(listModel);
+
 
         listCourses.addListSelectionListener(new ListSelectionListener() {
             @Override
@@ -89,7 +94,7 @@ public class MainPage {
             public void actionPerformed(ActionEvent e) {
                 StudentUtils studentUtils = new StudentUtils();
                 boolean successful = studentUtils.deleteStudent(BUID);
-                if(successful){
+                if (successful) {
                     showData();
                 } else {
                     showData();
@@ -101,7 +106,7 @@ public class MainPage {
         btnAddCourse.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new AddClass();
+                new AddClass(mainPage);
             }
         });
 
@@ -116,26 +121,26 @@ public class MainPage {
         btnEdtClassCpnts.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new ManageComponents(courseID);
+                new ManageComponents(courseID, mainPage);
             }
         });
 
         btnAddStudent.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new AddStudent(courseID);
+                new AddStudent(courseID, mainPage);
             }
         });
 
         btnGrading.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new GradingMain(courseID);
+                new GradingMain(courseID, mainPage);
             }
         });
 
 
-        frame = new JFrame("mainPanel");
+        frame = new JFrame("Easy Grading");
         frame.setContentPane(mainPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -146,8 +151,7 @@ public class MainPage {
     }
 
 
-
-    public void showData(){
+    public void showData() {
         columnsList = new ArrayList<>();
         components = new ArrayList<>();
         componentIDs = new ArrayList<>();
@@ -161,7 +165,13 @@ public class MainPage {
         GradingUtils gradingUtils = new GradingUtils();
         EnrollmentUtils enrollmentUtils = new EnrollmentUtils();
 
-        txtCourseName.setText(courseUtils.viewCertainCourse(courseID).getName());
+
+        try {
+            txtCourseName.setText(courseUtils.viewCertainCourse(courseID).getName());
+        } catch (NullPointerException e) {
+            System.out.println("Created");
+        }
+
 
         components = componentUtils.searchAllComponents(courseID);
 
@@ -182,7 +192,6 @@ public class MainPage {
 
         DefaultTableModel model = new DefaultTableModel(columnsList.toArray(), 0);
         List<Object> objectsList;
-
 
         List<Student> students = enrollmentUtils.searchAllStudent(courseID);
         for (Student student : students) {
@@ -248,5 +257,16 @@ public class MainPage {
 
         }
         tableGrades.setModel(model);
+    }
+
+
+    public void showList() {
+        listModel = new DefaultListModel();
+        courseUtils = new CourseUtils();
+        List<Course> courses = courseUtils.viewAllCourse();
+        for (Course course : courses) {
+            listModel.addElement(course.printCourse());
+        }
+        listCourses.setModel(listModel);
     }
 }

@@ -23,14 +23,14 @@ public class ChooseTemplate {
     private DefaultListModel listModel;
     int courseID;
 
-    public ChooseTemplate() {
+    public ChooseTemplate(MainPage mainPage) {
 
         listModel = new DefaultListModel();
         CourseUtils courseUtils = new CourseUtils();
 
         List<Course> courses = courseUtils.viewAllCourse();
         for (Course course : courses) {
-            listModel.addElement(course.printCourse());
+            listModel.addElement(course.printLongCourse());
         }
         listCourses.setModel(listModel);
 
@@ -52,7 +52,7 @@ public class ChooseTemplate {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Course selectedCourse = courseUtils.viewCertainCourse(courseID);
-                new ConfirmTemplate(selectedCourse);
+                new ConfirmTemplate(selectedCourse, mainPage);
                 frame.dispose();
             }
         });
@@ -60,7 +60,7 @@ public class ChooseTemplate {
 
 
 
-        frame = new JFrame("Classlist");
+        frame = new JFrame("Choose a template");
         frame.setContentPane(Classlist);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 

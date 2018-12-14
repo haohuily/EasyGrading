@@ -24,7 +24,7 @@ public class AddClass {
     private static JFrame frame;
 
 
-    public AddClass() {
+    public AddClass(MainPage mainPage) {
         btnFromScratch.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -62,30 +62,23 @@ public class AddClass {
                     return;
                 } else {
                     frame.dispose();
+                    mainPage.showList();
                 }
             }
         });
 
 
-        // View all courses
-//        btnViewAll.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                CourseUtils courseUtils = new CourseUtils();
-//                courseUtils.viewAllCourse();
-//            }
-//        });
 
         btnFromTemplate.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new ChooseTemplate();
+                new ChooseTemplate(mainPage);
                 frame.dispose();
             }
         });
 
 
-        frame = new JFrame("mainPanel");
+        frame = new JFrame("Add class");
         frame.setContentPane(mainPanel);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 

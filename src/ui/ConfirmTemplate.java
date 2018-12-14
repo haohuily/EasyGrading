@@ -26,14 +26,11 @@ public class ConfirmTemplate {
     int newCourseID;
 
 
-    public ConfirmTemplate(Course selectedCourse) {
+    public ConfirmTemplate(Course selectedCourse, MainPage mainPage) {
 
         edtCourseName.setText(selectedCourse.getName());
 
         edtCourseNum.setText(selectedCourse.getNum());
-
-
-
 
 
         btnContinue.addActionListener(new ActionListener() {
@@ -84,6 +81,9 @@ public class ConfirmTemplate {
                                 component.getTotalScore(), component.getGlobalCurve(), component.getComments());
                     }
                 }
+                frame.dispose();
+                mainPage.showList();
+                mainPage.showData();
             }
         });
 
@@ -92,7 +92,7 @@ public class ConfirmTemplate {
 
 
 
-        frame = new JFrame("mainPanel");
+        frame = new JFrame("Confirm template");
         frame.setContentPane(mainPanel);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
