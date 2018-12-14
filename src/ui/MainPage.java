@@ -10,6 +10,7 @@ import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -21,7 +22,6 @@ import java.util.List;
 import java.util.Map;
 
 public class MainPage {
-    private JTextField searchTextField;
     private JButton btnLogout;
     private JPanel Classlist;
     private JPanel Gradebook;
@@ -53,6 +53,7 @@ public class MainPage {
     Map<Integer, Component> componentMap;
     CourseUtils courseUtils;
 
+
     public MainPage() {
         mainPage = this;
         showList();
@@ -74,7 +75,6 @@ public class MainPage {
                 }
             }
         });
-
 
         tableGrades.addMouseListener(new MouseAdapter() {
             @Override
@@ -101,7 +101,6 @@ public class MainPage {
                 }
             }
         });
-
 
         btnAddCourse.addActionListener(new ActionListener() {
             @Override
@@ -139,6 +138,15 @@ public class MainPage {
             }
         });
 
+
+//        btnSearch.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);
+//                tableGrades.setRowSorter(sorter);
+//                sorter.setRowFilter(RowFilter.regexFilter(edtSearch.getText().trim()));
+//            }
+//        });
 
         frame = new JFrame("Easy Grading");
         frame.setContentPane(mainPanel);
@@ -258,7 +266,6 @@ public class MainPage {
         }
         tableGrades.setModel(model);
     }
-
 
     public void showList() {
         listModel = new DefaultListModel();

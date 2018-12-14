@@ -9,24 +9,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class AddStudent {
-    private JPanel Header;
-    private JTextField searchTextField;
-    private JButton logout;
     private JPanel Body;
-    private JPanel Classlist;
-    private JButton addclass;
     private JPanel mainPanel;
-    private JButton backButton;
-    private JButton importButton;
-    private JTextField textField1;
-    private JButton browseComputerButton;
-    private JButton importButton1;
     private JTextField edtStudentFirstName;
     private JTextField edtBUID;
     private JButton btnAdd;
     private JRadioButton radioBtnUnderGraduate;
     private JRadioButton radioBtnGraduate;
-    private JList Classes;
     private JTextField edtStudentLastName;
     private JFrame frame;
     private String stand;
@@ -78,7 +67,7 @@ public class AddStudent {
                     JOptionPane.showMessageDialog(frame, result, "Warning", JOptionPane.WARNING_MESSAGE);
                     return;
                 } else {
-                    frame.dispose();
+//                    frame.dispose();
                     mainPage.showData();
                 }
             }
@@ -86,11 +75,11 @@ public class AddStudent {
 
 
         frame = new JFrame("Add student");
-        frame.setContentPane(Body);
+        frame.setContentPane(mainPanel);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         UICommonUtils.makeFrameToCenter(frame);
-        frame.setSize(800, 600);
+        frame.setSize(600, 300);
 
         frame.setVisible(true);
     }

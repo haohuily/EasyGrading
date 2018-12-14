@@ -9,8 +9,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class AddClass {
-    private JTextField searchTextField;
-    private JButton logout;
     private JPanel mainPanel;
     private JTextField edtCourseName;
     private JTextField edtCourseNum;
@@ -19,8 +17,7 @@ public class AddClass {
     private JTextField edtYear;
     private JButton btnFromTemplate;
     private JButton btnFromScratch;
-    private JPanel Body;
-    private JPanel Header;
+    private JPanel main;
     private static JFrame frame;
 
 
@@ -79,11 +76,11 @@ public class AddClass {
 
 
         frame = new JFrame("Add class");
-        frame.setContentPane(mainPanel);
+        frame.setContentPane(main);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         UICommonUtils.makeFrameToCenter(frame);
-        frame.setSize(800, 600);
+        frame.setSize(550, 450);
 
         frame.setVisible(true);
 

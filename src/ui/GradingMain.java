@@ -12,6 +12,7 @@ import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -37,6 +38,8 @@ public class GradingMain {
     private JButton btnGradeStudent;
     private JButton btnSetCurve;
     private JScrollPane scrollPanel;
+    private JTextField edtSearch;
+    private JButton btnSearch;
     private JFrame frame;
     private DefaultListModel listModel;
 
@@ -47,6 +50,7 @@ public class GradingMain {
     GradingMain gradingMain;
     ComponentUtils componentUtils;
     int courseID;
+    DefaultTableModel model;
 
 
     public GradingMain(int courseID, MainPage mainPage) {
@@ -105,6 +109,16 @@ public class GradingMain {
         });
 
 
+        btnSearch.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);
+                tableGrade.setRowSorter(sorter);
+                sorter.setRowFilter(RowFilter.regexFilter(edtSearch.getText().trim()));
+            }
+        });
+
+
         frame = new JFrame("Grading");
         frame.setContentPane(Body);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -129,7 +143,7 @@ public class GradingMain {
 
         // Table data change
         Object[] columnNames = {"Student name", "Student BU ID", "Stand", "Base Grade", "Individual Curve", "Comments"};
-        DefaultTableModel model = new DefaultTableModel(columnNames, 0);
+        model = new DefaultTableModel(columnNames, 0);
 
         EnrollmentUtils enrollmentUtils = new EnrollmentUtils();
         List<Student> students = enrollmentUtils.searchAllStudent(courseID);
@@ -158,5 +172,4 @@ public class GradingMain {
         }
         tableGrade.setModel(model);
     }
-
 }
