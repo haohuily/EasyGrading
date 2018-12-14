@@ -35,6 +35,7 @@ public class AddNewComponent {
         boxCategory.addItem("Project");
         boxCategory.addItem("Attendance");
         boxCategory.addItem("Exam");
+        boxCategory.addItem("Lab");
 
         boxCategory.addActionListener(new ActionListener() {
             @Override
@@ -75,7 +76,7 @@ public class AddNewComponent {
                     return;
                 } else {
                     frame.dispose();
-//                    new EditComponents(courseID);
+//                    new ManageComponents(courseID);
                 }
             }
         });

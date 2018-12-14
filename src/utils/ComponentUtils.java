@@ -59,13 +59,12 @@ public class ComponentUtils {
         return components;
     }
 
-    public String deleteComponents(int courseID, String name) {
+    public String deleteComponents(int componentID) {
         String resultStr = "Fail to delete component";
-        String sql = "delete from components where courseID = ? and name = ?";
+        String sql = "delete from components where id=?";
 
         List<Object> params = new ArrayList<>();
-        params.add(courseID);
-        params.add(name);
+        params.add(componentID);
 
         try {
             jdbcUtils.updateByPreparedStatement(sql, params);
@@ -106,6 +105,28 @@ public class ComponentUtils {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public boolean updateCertainComponent(int componentID, String name, String type, Double graduateWeight, Double undergraduateWeight, Double totalScore, String comments) {
+        String sql = "update components set name=?,type=?,graduateWeight=?,undergraduateWeight=?,totalScore=?,comments=? where id=?";
+
+        List<Object> params = new ArrayList<>();
+
+        params.add(name);
+        params.add(type);
+        params.add(graduateWeight);
+        params.add(undergraduateWeight);
+        params.add(totalScore);
+        params.add(comments);
+        params.add(componentID);
+
+        try {
+            return jdbcUtils.updateByPreparedStatement(sql, params);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
 

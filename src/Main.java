@@ -1,4 +1,3 @@
-import ui.AddNewComponent;
 import ui.MainPage;
 
 public class Main {

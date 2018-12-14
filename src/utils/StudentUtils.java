@@ -29,7 +29,6 @@ public class StudentUtils {
             String stand = student.getStand();
 
 
-
             // add to students table
             List<Object> params = new ArrayList<>();
             params.add(BUID);
@@ -71,7 +70,18 @@ public class StudentUtils {
     }
 
 
+    public boolean deleteStudent(String BUID) {
+        String sql = "delete from students where BUID=?";
+        List<Object> params = new ArrayList<>();
+        params.add(BUID);
 
+        try {
+            return jdbcUtils.updateByPreparedStatement(sql, params);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 
 
     @Override

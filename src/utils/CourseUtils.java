@@ -51,8 +51,6 @@ public class CourseUtils {
     }
 
 
-    // TODO: import course from template
-
     // View all courses
     public List<Course> viewAllCourse() {
         String sql = "select * from courses";
@@ -69,33 +67,42 @@ public class CourseUtils {
     }
 
 
-
-
-
-
-
-
-
-
     // View certain course
     public Course viewCertainCourse(int courseID) {
         Course course = new Course();
-        String sql = "select * from course where courseID = ?";
+        String sql = "select * from courses where id = ?";
 
+        List<Object> params = new ArrayList<>();
+        params.add(courseID);
+
+        try {
+            return jdbcUtils.findSimpleRefResult(sql, params, Course.class);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return course;
     }
 
 
-    public String updateCourse(Course course) {
-        String resultStr = "Fail to update course";
+    public int searchCertainCourseID(String num, String section, String semester, int year) {
+        String sql = "select * from courses where num = ?  and section = ? and semester = ? and year = ?";
 
-        return resultStr;
-    }
+        List<Object> params = new ArrayList<>();
+        params.add(num);
+        params.add(section);
+        params.add(semester);
+        params.add(year);
 
-    public String deleteCourse(int courseID) {
-        String resultStr = "Fail to remove course";
+        try {
+            Course course = jdbcUtils.findSimpleRefResult(sql, params, Course.class);
+            return course.getId();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
 
-        return resultStr;
+
+
     }
 
 

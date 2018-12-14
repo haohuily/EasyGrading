@@ -1,8 +1,6 @@
 package ui;
 
-import beans.Course;
 import beans.Student;
-import utils.CourseUtils;
 import utils.StudentUtils;
 import utils.UICommonUtils;
 
@@ -23,12 +21,13 @@ public class AddStudent {
     private JTextField textField1;
     private JButton browseComputerButton;
     private JButton importButton1;
-    private JTextField edtStudentName;
+    private JTextField edtStudentFirstName;
     private JTextField edtBUID;
     private JButton btnAdd;
     private JRadioButton radioBtnUnderGraduate;
     private JRadioButton radioBtnGraduate;
     private JList Classes;
+    private JTextField edtStudentLastName;
     private JFrame frame;
     private String stand;
 
@@ -41,8 +40,12 @@ public class AddStudent {
         btnAdd.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (edtStudentName.getText() == null || edtStudentName.getText().length() <= 0) {
-                    JOptionPane.showMessageDialog(frame, "Please enter student name", "Warning", JOptionPane.WARNING_MESSAGE);
+                if (edtStudentFirstName.getText() == null || edtStudentFirstName.getText().length() <= 0) {
+                    JOptionPane.showMessageDialog(frame, "Please enter student first name", "Warning", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
+                if (edtStudentLastName.getText() == null || edtStudentLastName.getText().length() <= 0) {
+                    JOptionPane.showMessageDialog(frame, "Please enter student last name", "Warning", JOptionPane.WARNING_MESSAGE);
                     return;
                 }
                 if (edtBUID.getText() == null || edtBUID.getText().length() <= 0) {
@@ -55,9 +58,12 @@ public class AddStudent {
                 }
 
 
-                String name = edtStudentName.getText().trim();
+                String firstName = edtStudentFirstName.getText().trim();
+                String lastName = edtStudentLastName.getText().trim();
+                String name = firstName + " " + lastName;
+
                 String buid = edtBUID.getText().trim();
-                if(radioBtnGraduate.isSelected()){
+                if (radioBtnGraduate.isSelected()) {
                     stand = "Graduate";
                 } else {
                     stand = "Undergraduate";

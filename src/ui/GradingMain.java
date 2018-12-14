@@ -73,7 +73,7 @@ public class GradingMain {
 
 
                     // Table data change
-                    Object[] columnNames = {"Student name", "Student BU ID", "Base Grade", "Individual Curve", "Comments"};
+                    Object[] columnNames = {"Student name", "Student BU ID", "Stand", "Base Grade", "Individual Curve", "Comments"};
                     DefaultTableModel model = new DefaultTableModel(columnNames, 0);
 
                     EnrollmentUtils enrollmentUtils = new EnrollmentUtils();
@@ -82,6 +82,8 @@ public class GradingMain {
                         // TODO: more info here
                         String name = student.getName();
                         String BUID = student.getBUID();
+                        String stand = student.getStand();
+
                         map.put(BUID, student);
 
 
@@ -97,7 +99,7 @@ public class GradingMain {
                             individualCurve = grade.getStudentCurve();
                             comments = grade.getComments();
                         }
-                        model.addRow(new Object[]{name, BUID, baseGrade, individualCurve, comments});
+                        model.addRow(new Object[]{name, BUID, stand, baseGrade, individualCurve, comments});
                     }
                     tableGrade.setModel(model);
 
