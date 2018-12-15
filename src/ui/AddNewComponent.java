@@ -88,7 +88,7 @@ public class AddNewComponent {
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         UICommonUtils.makeFrameToCenter(frame);
-        frame.setSize(800, 600);
+        frame.setSize(500, 300);
 
         frame.setVisible(true);
     }
