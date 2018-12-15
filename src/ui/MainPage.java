@@ -1,9 +1,6 @@
 package ui;
 
-import beans.Component;
-import beans.Course;
-import beans.Grade;
-import beans.Student;
+import beans.*;
 import utils.*;
 
 import javax.swing.*;
@@ -36,6 +33,7 @@ public class MainPage {
     private JScrollPane scrollPanelGrades;
     private JButton btnRemoveStudent;
     private JLabel txtCourseName;
+    private JButton btnViewClass;
     private static JFrame frame;
 
 
@@ -53,19 +51,12 @@ public class MainPage {
     Map<Integer, Component> componentMap;
     CourseUtils courseUtils;
 
+//    Map<Component, Double> statistics = new HashMap<>();
+
 
     public MainPage() {
         mainPage = this;
         showList();
-
-//        listModel = new DefaultListModel();
-//        courseUtils = new CourseUtils();
-//        List<Course> courses = courseUtils.viewAllCourse();
-//        for (Course course : courses) {
-//            listModel.addElement(course.printCourse());
-//        }
-//        listCourses.setModel(listModel);
-
 
         listCourses.addListSelectionListener(new ListSelectionListener() {
             @Override
@@ -138,15 +129,13 @@ public class MainPage {
             }
         });
 
+        btnViewClass.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new Statistics(courseID);
+            }
+        });
 
-//        btnSearch.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);
-//                tableGrades.setRowSorter(sorter);
-//                sorter.setRowFilter(RowFilter.regexFilter(edtSearch.getText().trim()));
-//            }
-//        });
 
         frame = new JFrame("Easy Grading");
         frame.setContentPane(mainPanel);
@@ -172,6 +161,7 @@ public class MainPage {
         ComponentUtils componentUtils = new ComponentUtils();
         GradingUtils gradingUtils = new GradingUtils();
         EnrollmentUtils enrollmentUtils = new EnrollmentUtils();
+        StatisticUtils statisticUtils = new StatisticUtils();
 
 
         try {
@@ -237,6 +227,19 @@ public class MainPage {
                     objectsList.add(total);
                 } else {
                     objectsList.add(0.0);
+                }
+
+//                if (statistics.containsKey(currentComponent)) {
+//                    statistics.put(currentComponent, statistics.get(currentComponent) + total);
+//                } else {
+//                    statistics.put(currentComponent, total);
+//                }
+
+                Statistic statistic = statisticUtils.searchCertainStatistic(student.getId(), componentID);
+                if (statistic != null) {
+                    statisticUtils.updateStatistic(statistic.getId(), total);
+                } else {
+                    statisticUtils.insertStatistic(student.getId(), componentID, total);
                 }
 
                 sum += total;
