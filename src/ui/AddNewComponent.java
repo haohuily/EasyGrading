@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import static com.sun.tools.internal.xjc.reader.Ring.add;
+//import static com.sun.tools.internal.xjc.reader.Ring.add;
 
 public class AddNewComponent {
     private JTextField edtCpntName;
