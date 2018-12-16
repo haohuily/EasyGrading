@@ -109,7 +109,7 @@ public class GradingMain {
         btnSetCurve.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (component.getId() == 0) {
+                if (component == null) {
                     JOptionPane.showMessageDialog(frame, "Please choose a component to continue!", "Warning", JOptionPane.WARNING_MESSAGE);
                     return;
                 }
