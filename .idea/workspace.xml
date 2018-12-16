@@ -1,28 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a8729f22-397c-4200-b608-06c6eb2cf515" name="Default Changelist" comment="Add statistics and modify UIs">
+    <list default="true" id="a8729f22-397c-4200-b608-06c6eb2cf515" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EasyGrading/ui/AddNewComponent$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EasyGrading/ui/AddNewComponent$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EasyGrading/ui/AddNewComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EasyGrading/ui/AddNewComponent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EasyGrading/ui/Login$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EasyGrading/ui/Login$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EasyGrading/ui/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EasyGrading/ui/Login.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EasyGrading/utils/ComponentUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EasyGrading/utils/ComponentUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/AddNewComponent.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/AddNewComponent.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/AddNewComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/AddNewComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/ConfirmTemplate.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ConfirmTemplate.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/GradeForStudent.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/GradeForStudent.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/GradeForStudent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/GradeForStudent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/GradingMain.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/GradingMain.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/GradingMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/GradingMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/MainPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/ModifyComponent.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ModifyComponent.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/ModifyComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ModifyComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/SetGlobalCurvePop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/SetGlobalCurvePop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/Statistics.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Statistics.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/Statistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Statistics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/ComponentUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/ComponentUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/JdbcUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/JdbcUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/StatisticUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/StatisticUtils.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,52 +16,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ui/MainPage.java">
+        <entry file="file://$PROJECT_DIR$/src/utils/JdbcUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="92" column="17" lean-forward="true" selection-start-line="92" selection-start-column="17" selection-end-line="92" selection-end-column="17" />
-              <folding>
-                <element signature="e#3373#3374#0" expanded="true" />
-                <element signature="e#3427#3428#0" expanded="true" />
-                <element signature="method#showList#0;class#MainPage#0" />
-              </folding>
+            <state relative-caret-position="920">
+              <caret line="236" column="5" lean-forward="true" selection-start-line="199" selection-start-column="4" selection-end-line="236" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ui/ChooseTemplate.form">
-          <provider selected="true" editor-type-id="ui-designer" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ui/Statistics.form">
-          <provider selected="true" editor-type-id="ui-designer" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ui/GradingMain.java">
+        <entry file="file://$PROJECT_DIR$/src/utils/StatisticUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="498">
-              <caret line="100" column="90" selection-start-line="100" selection-start-column="90" selection-end-line="100" selection-end-column="90" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ui/GradeForStudent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="807">
-              <caret line="94" column="30" selection-start-line="94" selection-start-column="30" selection-end-line="94" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ui/ModifyComponent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="38" column="53" lean-forward="true" selection-start-line="38" selection-start-column="53" selection-end-line="38" selection-end-column="53" />
+            <state relative-caret-position="236">
+              <caret line="82" column="8" selection-start-line="82" selection-start-column="8" selection-end-line="82" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -88,13 +37,68 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ui/GradeForStudent.form">
-          <provider selected="true" editor-type-id="ui-designer" />
+        <entry file="file://$PROJECT_DIR$/src/ui/MainPage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="332">
+              <caret line="189" lean-forward="true" selection-start-line="189" selection-end-line="189" />
+              <folding>
+                <element signature="method#showList#0;class#MainPage#0" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ui/AddNewComponent.form">
-          <provider selected="true" editor-type-id="ui-designer" />
+        <entry file="file://$PROJECT_DIR$/src/utils/ComponentUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="449">
+              <caret line="44" selection-start-line="44" selection-end-line="59" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/beans/Grade.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="31" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/beans/Statistic.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="30" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="30" />
+              <folding>
+                <element signature="e#177#178#0" expanded="true" />
+                <element signature="e#202#203#0" expanded="true" />
+                <element signature="e#235#236#0" expanded="true" />
+                <element signature="e#263#264#0" expanded="true" />
+                <element signature="e#621#622#0" expanded="true" />
+                <element signature="e#655#656#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/beans/Student.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/beans/Admin.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" selection-start-line="12" selection-end-line="15" selection-end-column="5" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -126,7 +130,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/ui/NewClass.form" />
         <option value="$PROJECT_DIR$/src/ui/EditClass.form" />
         <option value="$PROJECT_DIR$/src/ui/EditAttributes.java" />
         <option value="$PROJECT_DIR$/src/ui/EditAttributes.form" />
@@ -135,10 +138,8 @@
         <option value="$PROJECT_DIR$/src/ui/Grading.form" />
         <option value="$PROJECT_DIR$/src/beans/Enrollment.java" />
         <option value="$PROJECT_DIR$/src/ui/SetGlobalCurve.form" />
-        <option value="$PROJECT_DIR$/src/beans/Grade.java" />
         <option value="$PROJECT_DIR$/src/utils/EnrollmentUtils.java" />
         <option value="$PROJECT_DIR$/src/utils/GradingUtils.java" />
-        <option value="$PROJECT_DIR$/src/beans/Component.java" />
         <option value="$PROJECT_DIR$/src/ui/WelcomePage.form" />
         <option value="$PROJECT_DIR$/src/ui/WelcomePage.java" />
         <option value="$PROJECT_DIR$/src/ui/EditComponents.form" />
@@ -177,6 +178,9 @@
         <option value="$PROJECT_DIR$/src/ui/GradingMain.java" />
         <option value="$PROJECT_DIR$/src/ui/GradeForStudent.java" />
         <option value="$PROJECT_DIR$/src/ui/MainPage.java" />
+        <option value="$PROJECT_DIR$/src/beans/Component.java" />
+        <option value="$PROJECT_DIR$/src/beans/Grade.java" />
+        <option value="$PROJECT_DIR$/src/utils/JdbcUtils.java" />
       </list>
     </option>
   </component>
@@ -219,84 +223,7 @@
               <item name="EasyGrading" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="AddNewComponent" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="EasyGrading" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EasyGrading" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="AddStudent" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="EasyGrading" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EasyGrading" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="ChooseTemplate" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="EasyGrading" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EasyGrading" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="ConfirmTemplate" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="EasyGrading" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EasyGrading" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="GradeForStudent" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="EasyGrading" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EasyGrading" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="GradingMain" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="EasyGrading" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EasyGrading" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="Login" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="EasyGrading" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EasyGrading" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
               <item name="MainPage" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="EasyGrading" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EasyGrading" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="ManageComponents" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="EasyGrading" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EasyGrading" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="ModifyComponent" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="EasyGrading" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EasyGrading" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="SetGlobalCurvePop" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="EasyGrading" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EasyGrading" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="Statistics" type="e9f4de52:FormNode" />
             </path>
             <path>
               <item name="EasyGrading" type="b2602c69:ProjectViewProjectNode" />
@@ -308,8 +235,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -317,7 +244,7 @@
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="278" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544921615520" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544931743115" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -325,6 +252,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -441,6 +369,10 @@
       <workItem from="1544846776952" duration="248000" />
       <workItem from="1544890492390" duration="150000" />
       <workItem from="1544893592810" duration="9015000" />
+      <workItem from="1544921657172" duration="4900000" />
+      <workItem from="1544932406843" duration="563000" />
+      <workItem from="1544936070125" duration="11000" />
+      <workItem from="1544937145603" duration="504000" />
     </task>
     <task id="LOCAL-00001" summary="Add some functions based on existing ui.">
       <created>1543700312819</created>
@@ -491,11 +423,18 @@
       <option name="project" value="LOCAL" />
       <updated>1544894227242</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add warnings to invalid operations">
+      <created>1544921778270</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1544921778270</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="165916000" />
+    <option name="totallyTimeSpent" value="171894000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -507,10 +446,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="1013" extended-state="6" />
+    <frame x="0" y="23" width="1920" height="1013" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16932908" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17571884" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -518,7 +457,7 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.03257329" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.03257329" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49570817" weight="0.121606946" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.17432432" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -583,17 +522,11 @@
     <MESSAGE value="Add create class from template" />
     <MESSAGE value="UI modify and bug fix" />
     <MESSAGE value="Add statistics and modify UIs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add statistics and modify UIs" />
+    <MESSAGE value="Add warnings to invalid operations" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add warnings to invalid operations" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/ui/WelcomePage.java" />
-    <entry file="file://$PROJECT_DIR$/src/beans/Enrollment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="11" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/src.zip!/javax/swing/JTable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -644,65 +577,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/beans/Student.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/beans/Grade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="35" selection-start-line="35" selection-start-column="2" selection-end-line="41" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/beans/Component.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/beans/Course.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/beans/Admin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/beans/Statistic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-          <folding>
-            <element signature="e#202#203#0" expanded="true" />
-            <element signature="e#235#236#0" expanded="true" />
-            <element signature="e#263#264#0" expanded="true" />
-            <element signature="e#164#165#0" expanded="true" />
-            <element signature="e#198#199#0" expanded="true" />
-            <element signature="e#249#250#0" expanded="true" />
-            <element signature="e#295#296#0" expanded="true" />
-            <element signature="e#328#329#0" expanded="true" />
-            <element signature="e#360#361#0" expanded="true" />
-            <element signature="e#407#408#0" expanded="true" />
-            <element signature="e#449#450#0" expanded="true" />
-            <element signature="e#487#488#0" expanded="true" />
-            <element signature="e#521#522#0" expanded="true" />
-            <element signature="e#575#576#0" expanded="true" />
-            <element signature="e#621#622#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/GradingUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -746,23 +620,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/StatisticUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1938">
-          <caret line="119" column="57" selection-start-line="119" selection-start-column="57" selection-end-line="119" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/JdbcUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2176">
-          <caret line="133" column="17" selection-start-line="133" selection-start-column="17" selection-end-line="133" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -812,13 +669,6 @@
     <entry file="file://$PROJECT_DIR$/src/ui/ModifyComponent.form">
       <provider selected="true" editor-type-id="ui-designer" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/ComponentUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1642">
-          <caret line="115" column="8" selection-start-line="115" selection-start-column="8" selection-end-line="115" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/UICommonUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -837,12 +687,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/AddStudent.form">
-      <provider selected="true" editor-type-id="ui-designer" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="29" selection-end-line="343" />
         </state>
       </provider>
+      <provider selected="true" editor-type-id="ui-designer" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/ChooseTemplate.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -867,17 +717,98 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/Statistics.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/ChooseTemplate.form">
       <provider selected="true" editor-type-id="ui-designer" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/GradingMain.form">
+    <entry file="file://$PROJECT_DIR$/src/ui/Statistics.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/GradingMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1241">
+          <caret line="100" column="90" selection-start-line="100" selection-start-column="90" selection-end-line="100" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/GradeForStudent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1411">
+          <caret line="94" column="30" selection-start-line="94" selection-start-column="30" selection-end-line="94" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/ModifyComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="38" column="53" selection-start-line="38" selection-start-column="53" selection-end-line="38" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/GradeForStudent.form">
       <provider selected="true" editor-type-id="ui-designer" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/AddNewComponent.form">
       <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/beans/Component.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="27" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/beans/Course.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/beans/Enrollment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/beans/Grade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="31" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/beans/Statistic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="30" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="30" />
+          <folding>
+            <element signature="e#177#178#0" expanded="true" />
+            <element signature="e#202#203#0" expanded="true" />
+            <element signature="e#235#236#0" expanded="true" />
+            <element signature="e#263#264#0" expanded="true" />
+            <element signature="e#621#622#0" expanded="true" />
+            <element signature="e#655#656#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/beans/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/beans/Admin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" selection-start-line="12" selection-end-line="15" selection-end-column="5" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/AddStudent.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -886,27 +817,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/GradingMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="100" column="90" selection-start-line="100" selection-start-column="90" selection-end-line="100" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/GradeForStudent.form">
+    <entry file="file://$PROJECT_DIR$/src/ui/GradingMain.form">
       <provider selected="true" editor-type-id="ui-designer" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/GradeForStudent.java">
+    <entry file="file://$PROJECT_DIR$/src/utils/StatisticUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="807">
-          <caret line="94" column="30" selection-start-line="94" selection-start-column="30" selection-end-line="94" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/ModifyComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="38" column="53" lean-forward="true" selection-start-line="38" selection-start-column="53" selection-end-line="38" selection-end-column="53" />
+        <state relative-caret-position="236">
+          <caret line="82" column="8" selection-start-line="82" selection-start-column="8" selection-end-line="82" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -915,13 +832,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/MainPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="92" column="17" lean-forward="true" selection-start-line="92" selection-start-column="17" selection-end-line="92" selection-end-column="17" />
+        <state relative-caret-position="332">
+          <caret line="189" lean-forward="true" selection-start-line="189" selection-end-line="189" />
           <folding>
-            <element signature="e#3373#3374#0" expanded="true" />
-            <element signature="e#3427#3428#0" expanded="true" />
             <element signature="method#showList#0;class#MainPage#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/ComponentUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="449">
+          <caret line="44" selection-start-line="44" selection-end-line="59" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/JdbcUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="920">
+          <caret line="236" column="5" lean-forward="true" selection-start-line="199" selection-start-column="4" selection-end-line="236" selection-end-column="5" />
         </state>
       </provider>
     </entry>

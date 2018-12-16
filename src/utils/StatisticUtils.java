@@ -1,6 +1,5 @@
 package utils;
 
-import beans.Grade;
 import beans.Statistic;
 
 import java.util.ArrayList;
@@ -117,7 +116,7 @@ public class StatisticUtils {
         params.add(componentID);
 
         try {
-            return jdbcUtils.findModeResult(sql, params);
+            return jdbcUtils.findMoreResult(sql, params);
         } catch (Exception e) {
             e.printStackTrace();
         }
