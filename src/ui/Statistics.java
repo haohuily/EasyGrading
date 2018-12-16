@@ -50,26 +50,36 @@ public class Statistics {
             String type = component.getType();
             Double totalScore = component.getTotalScore();
 
-            Double avg = new Double(statisticUtils.AVG(courseID, id).get("avg(curvedGrade)").toString());
-            Double max = new Double(statisticUtils.MAX(courseID, id).get("max(curvedGrade)").toString());
-            Double min = new Double(statisticUtils.MIN(courseID, id).get("min(curvedGrade)").toString());
-
-            List<Map<String, Object>> listMap = statisticUtils.All(courseID, id);
-
-            Double sum = 0.0;
-
+            Double avg = 0.0;
+            Double max = 0.0;
+            Double min = 0.0;
+            Double std = 0.0;
 
             DecimalFormat df = new DecimalFormat("0.00");
 
-            for (Map<String, Object> map : listMap) {
-                Object object = map.get("curvedGrade");
-                Double objectDouble = new Double(object.toString());
+            try {
+                avg = new Double(statisticUtils.AVG(courseID, id).get("avg(curvedGrade)").toString());
+                max = new Double(statisticUtils.MAX(courseID, id).get("max(curvedGrade)").toString());
+                min = new Double(statisticUtils.MIN(courseID, id).get("min(curvedGrade)").toString());
 
-                sum += (objectDouble - avg) * (objectDouble - avg);
+                List<Map<String, Object>> listMap = statisticUtils.All(courseID, id);
 
+                Double sum = 0.0;
+
+
+                for (Map<String, Object> map : listMap) {
+                    Object object = map.get("curvedGrade");
+                    Double objectDouble = new Double(object.toString());
+
+                    sum += (objectDouble - avg) * (objectDouble - avg);
+
+                }
+
+                std = Math.sqrt(sum) / listMap.size();
+            } catch (NumberFormatException e) {
+                System.out.println("No data");
             }
 
-            Double std = Math.sqrt(sum) / listMap.size();
 
             model.addRow(new Object[]{name, type, totalScore, df.format(avg), df.format(max), df.format(min), df.format(std)});
         }

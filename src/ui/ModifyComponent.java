@@ -19,7 +19,7 @@ public class ModifyComponent {
     private JLabel txtTotalScore;
     private JTextField edtTotalScore;
     private JLabel txtComments;
-    private JTextArea edtComments;
+    private JTextField edtComments;
     private JButton btnModify;
     private JComboBox boxCategory;
 
@@ -126,7 +126,7 @@ public class ModifyComponent {
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         UICommonUtils.makeFrameToCenter(frame);
-        frame.setSize(800, 600);
+        frame.setSize(500, 300);
 
         frame.setVisible(true);
     }

@@ -40,6 +40,7 @@ public class GradingMain {
     private JScrollPane scrollPanel;
     private JTextField edtSearch;
     private JButton btnSearch;
+    private JLabel txtTotalScore;
     private JFrame frame;
     private DefaultListModel listModel;
 
@@ -96,6 +97,10 @@ public class GradingMain {
         btnGradeStudent.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                if (student == null) {
+                    JOptionPane.showMessageDialog(frame, "Please choose a student to grade!", "Warning", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
                 new GradeForStudent(student, component.getId(), mainPage, gradingMain);
             }
         });
@@ -104,7 +109,11 @@ public class GradingMain {
         btnSetCurve.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new SetGlobalCurvePop(component.getId());
+                if (component.getId() == 0) {
+                    JOptionPane.showMessageDialog(frame, "Please choose a component to continue!", "Warning", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
+                new SetGlobalCurvePop(component.getId(), gradingMain);
             }
         });
 
@@ -138,6 +147,7 @@ public class GradingMain {
         txtType.setText(component.getType());
         txtGradWeight.setText(component.getGraduateWeight().toString());
         txtUndergradWeight.setText(component.getUndergraduateWeight().toString());
+        txtTotalScore.setText(component.getTotalScore().toString());
         txtGlobalCurve.setText(component.getGlobalCurve().toString());
 
 

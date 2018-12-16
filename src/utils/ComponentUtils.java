@@ -107,6 +107,23 @@ public class ComponentUtils {
         return null;
     }
 
+
+    public Component searchCertainComponentByID(int id) {
+        String sql = "select * from components where id=?";
+
+        List<Object> params = new ArrayList<>();
+        params.add(id);
+        
+        try {
+            return jdbcUtils.findSimpleRefResult(sql, params, Component.class);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
     public boolean updateCertainComponent(int componentID, String name, String type, Double graduateWeight, Double undergraduateWeight, Double totalScore, String comments) {
         String sql = "update components set name=?,type=?,graduateWeight=?,undergraduateWeight=?,totalScore=?,comments=? where id=?";
 

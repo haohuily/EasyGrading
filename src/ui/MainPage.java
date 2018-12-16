@@ -83,6 +83,14 @@ public class MainPage {
         btnRemoveStudent.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                if (courseID == 0) {
+                    JOptionPane.showMessageDialog(frame, "Please choose a course to continue!", "Warning", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
+                if (BUID == null) {
+                    JOptionPane.showMessageDialog(frame, "Please choose a student to delete!", "Warning", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
                 StudentUtils studentUtils = new StudentUtils();
                 boolean successful = studentUtils.deleteStudent(BUID);
                 if (successful) {
@@ -111,6 +119,10 @@ public class MainPage {
         btnEdtClassCpnts.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                if (courseID == 0) {
+                    JOptionPane.showMessageDialog(frame, "Please choose a course to continue!", "Warning", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
                 new ManageComponents(courseID, mainPage);
             }
         });
@@ -118,6 +130,10 @@ public class MainPage {
         btnAddStudent.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                if (courseID == 0) {
+                    JOptionPane.showMessageDialog(frame, "Please choose a course to continue!", "Warning", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
                 new AddStudent(courseID, mainPage);
             }
         });
@@ -125,6 +141,10 @@ public class MainPage {
         btnGrading.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                if (courseID == 0) {
+                    JOptionPane.showMessageDialog(frame, "Please choose a course to continue!", "Warning", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
                 new GradingMain(courseID, mainPage);
             }
         });
@@ -132,6 +152,10 @@ public class MainPage {
         btnViewClass.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                if (courseID == 0) {
+                    JOptionPane.showMessageDialog(frame, "Please choose a course to continue!", "Warning", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
                 new Statistics(courseID);
             }
         });

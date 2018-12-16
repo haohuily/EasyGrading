@@ -72,7 +72,7 @@ public class Login {
                     JOptionPane.showMessageDialog(frame, result, "Warning", JOptionPane.WARNING_MESSAGE);
                     return;
                 } else {
-                    frame.dispose();
+                    JOptionPane.showMessageDialog(frame, "Successfully registered! Please login!", "Warning", JOptionPane.WARNING_MESSAGE);
                 }
 
             }
@@ -84,7 +84,7 @@ public class Login {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         UICommonUtils.makeFrameToCenter(frame);
-        frame.setSize(400, 300);
+        frame.setSize(600, 500);
 
         frame.setVisible(true);
 

@@ -38,7 +38,7 @@
             <properties>
               <font size="26"/>
               <foreground color="-16777216"/>
-              <text value="Student Info"/>
+              <text value="Student Grade Info"/>
             </properties>
           </component>
           <component id="fd93d" class="javax.swing.JLabel" binding="txtStudentName">
@@ -133,7 +133,7 @@
           </hspacer>
           <component id="bd32c" class="javax.swing.JButton" binding="btnSave">
             <constraints>
-              <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="7" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <text value="Save"/>

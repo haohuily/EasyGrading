@@ -15,7 +15,7 @@ public class SetGlobalCurvePop {
 
     private JFrame frame;
 
-    public SetGlobalCurvePop(int componentID) {
+    public SetGlobalCurvePop(int componentID, GradingMain gradingMain) {
 
 
         btnSave.addActionListener(new ActionListener() {
@@ -23,6 +23,7 @@ public class SetGlobalCurvePop {
             public void actionPerformed(ActionEvent e) {
                 ComponentUtils componentUtils = new ComponentUtils();
                 componentUtils.updateGlobalCurve(componentID, Double.valueOf(edtCurve.getText()));
+                gradingMain.showGrade();
                 frame.dispose();
             }
         });

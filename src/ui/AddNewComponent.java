@@ -22,7 +22,7 @@ public class AddNewComponent {
     private JPanel cpntPanel;
     private JTextField edtTotalScore;
     private JLabel txtTotalScore;
-    private JTextArea edtComments;
+    private JTextField edtComments;
     private JLabel txtComments;
     private JFrame frame;
 
