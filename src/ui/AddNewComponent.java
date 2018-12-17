@@ -24,7 +24,6 @@ public class AddNewComponent {
     private JLabel txtTotalScore;
     private JTextField edtComments;
     private JLabel txtComments;
-    private JTextField textField1;
     private JFrame frame;
 
     private String type = "Homework";

@@ -166,7 +166,7 @@ public class MainPage {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         UICommonUtils.makeFrameToCenter(frame);
-        frame.setSize(1000, 600);
+        frame.setSize(1100, 600);
 
         frame.setVisible(true);
     }

@@ -59,6 +59,10 @@ public class ManageComponents {
         btnEditCpnt.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                if(componentSelected == null) {
+                    JOptionPane.showMessageDialog(frame, "Please choose a component to edit!", "Warning", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
                 new ModifyComponent(componentSelected, manageComponents, mainPage);
             }
         });
@@ -67,6 +71,10 @@ public class ManageComponents {
         btnDeleteCpnts.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                if(componentSelected == null) {
+                    JOptionPane.showMessageDialog(frame, "Please choose a component to delete!", "Warning", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
                 String result = componentUtils.deleteComponents(componentSelected.getId());
 
                 if (!result.equals("Successfully delete component")) {

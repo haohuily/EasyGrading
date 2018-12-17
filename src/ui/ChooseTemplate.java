@@ -47,17 +47,18 @@ public class ChooseTemplate {
         });
 
 
-
         btnChoose.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                if (courseID == 0) {
+                    JOptionPane.showMessageDialog(frame, "Please choose a course!", "Warning", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
                 Course selectedCourse = courseUtils.viewCertainCourse(courseID);
                 new ConfirmTemplate(selectedCourse, mainPage);
                 frame.dispose();
             }
         });
-
-
 
 
         frame = new JFrame("Choose a template");

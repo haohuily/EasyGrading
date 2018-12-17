@@ -80,7 +80,7 @@ public class AddClass {
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         UICommonUtils.makeFrameToCenter(frame);
-        frame.setSize(550, 450);
+        frame.setSize(550, 500);
 
         frame.setVisible(true);
 
